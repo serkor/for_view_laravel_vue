@@ -1,0 +1,56 @@
+@extends('layouts.front.app')
+
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="bs-example">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2 class="sub-header">@lang('form.edit') - {{$customer->name}}</h2>
+                                    <div class="table-responsive">
+                                        {!! Form::model($customer,['method' => 'PUT', 'route' => ['update_customer_user', $customer->id]]) !!}
+                                        <div class="form-group col-md-4 mb-3">
+                                            @if($customer->image ?? [])
+                                                <img id="blah" class="img-thumbnail logo_user"
+                                                     src="{{ asset('storage/avatar/'.$customer->image) }}" alt="logo">
+                                            @else
+                                                <img id="blah" class="img-thumbnail logo_user"
+                                                     src="{{ asset('public/images/user_no.png') }}" alt="logo">
+                                            @endif
+                                        </div>
+                                        <div class="form-group col-md-8 mb-3">
+                                            <input id="file" class="form-control-file" type="file" name="image">
+                                        </div>
+                                        <div class="form-group">
+                                            {!! Form::label('name', trans('user.name'),['class' => 'control-label']) !!}
+                                            {!! Form::text('name', old('name'), array_merge(['class' =>'form-control'])) !!}
+                                        </div>
+                                        <div class="form-group">
+                                            {!! Form::label('surname', trans('user.surname'),['class' => 'control-label']) !!}
+                                            {!! Form::text('surname', old('surname'), array_merge(['class' =>'form-control'])) !!}
+                                        </div>
+                                        <div class="form-group">
+                                            {!! Form::label('phone', trans('user.phone'),['class' => 'control-label']) !!}
+                                            {!! Form::text('phone', old('phone'), array_merge(['class' =>'form-control'])) !!}
+                                        </div>
+                                        <div class="form-group">
+                                            {!! Form::label('email', trans('user.email'),['class' => 'control-label']) !!}
+                                            {!! Form::email('email', old('email'), array_merge(['class' =>'form-control'])) !!}
+                                        </div>
+                                        <div class="form-group">
+                                            {!! Form::submit(trans('form.save'),array_merge(['class' => 'btn btn-primary'] )) !!}
+                                        </div>
+                                        {!! Form::close() !!}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

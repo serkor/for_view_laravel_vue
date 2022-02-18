@@ -1,0 +1,36 @@
+<?php
+
+return [
+
+	/*
+	|--------------------------------------------------------------------------
+	| Pagination Language Lines
+	|--------------------------------------------------------------------------
+	|
+	| The following language lines are used by the paginator library to build
+	| the simple pagination links. You are free to change them to anything
+	| you want to customize your views to better match your application.
+	|
+	*/
+
+    'submit' => 'Отправить',
+    'edit' => 'Редактировать',
+    'show' => 'Смотреть',
+    'delete' => 'Удалить',
+    'update' => 'Обновить',
+    'create' => 'Создать',
+    'select' => 'Выбрать',
+    'yes' => 'Да',
+    'no' => 'Нет',
+    'view' => 'Просмотр',
+    'link' => 'Ссылка',
+    'go' => 'Вперед',
+    'id' => 'ID',
+    'created_at' => 'Создано',
+    'updated_at' => 'Обновлено',
+    'save' => 'Сохранить',
+    'default' => 'По умолчанию',
+    'to_apply' => 'Применить',
+    'download' => 'Загрузить',
+
+];
